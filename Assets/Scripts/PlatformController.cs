@@ -10,33 +10,23 @@ public class PlatformController : MonoBehaviour
     void Update()
     {
 
-        if(Platforms[0] == null)
-        {
-            Debug.Log("Object is invisible");
-            Platforms[0] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, 41), Quaternion.identity);
-        }
-        else if (Platforms[1] == null)
-        {
-            Debug.Log("Object is invisible");
-            Platforms[1] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, 41), Quaternion.identity);
-        }
-        else if (Platforms[2] == null)
-        {
-            Debug.Log("Object is invisible");
-            Platforms[2] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, 41), Quaternion.identity);
-        }
-        else if (Platforms[3] == null)
-        {
-            Debug.Log("Object is invisible");
-            Platforms[3] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, 41), Quaternion.identity);
-        }
-        else if (Platforms[4] == null)
-        {
-            Debug.Log("Object is invisible");
-            Platforms[4] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, 41), Quaternion.identity);
-        }
 
 
+        for (int i = 0; i < Platforms.Length; i++)
+        {
+            if (Platforms[i] == null)
+            {
+                Debug.Log("Object is invisible");
+                if (i != 0)
+                {
+                    Platforms[i] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, Platforms[i-1].transform.position.z + 9), Quaternion.identity);
+                }
+                else
+                {
+                    Platforms[i] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, Platforms[4].transform.position.z + 9), Quaternion.identity);
+                }
+            }
+        }
     }
 
 

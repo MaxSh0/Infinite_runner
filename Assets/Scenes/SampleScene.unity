@@ -417,14 +417,12 @@ MonoBehaviour:
   - {fileID: 561928223}
   - {fileID: 4078892976736260727}
   - {fileID: 545839172}
-  - {fileID: 0}
   prefabPlatforms:
   - {fileID: 8690230194277290714, guid: 71af1dcc619f62841acb5903512e64d1, type: 3}
   - {fileID: 7995117492281213921, guid: ce9def89bc34abe4f873ef411d657b07, type: 3}
   - {fileID: 5973780258800764664, guid: d50fa55ac38f3dc45ad895d13182eb31, type: 3}
   - {fileID: 3929844113994907157, guid: 71086cb91af5ecc41b684e53032a5d01, type: 3}
   - {fileID: 1453800804956810447, guid: 408d413ca2d91a6409788ac74013c934, type: 3}
-  - {fileID: 4754752521444669933, guid: 934242a323b51e146bc512f5ecf027c7, type: 3}
 --- !u!1 &1256408176 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3929844113994907157, guid: 71086cb91af5ecc41b684e53032a5d01,

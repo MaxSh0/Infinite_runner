@@ -7,7 +7,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(new Vector3(0, 0, -0.1f));
+        transform.Translate(new Vector3(0, 0, -5f) * Time.deltaTime);
         //для тестов
         if (transform.position.z <= -8)
         {
@@ -17,8 +17,8 @@ public class Move : MonoBehaviour
 
     }
 
-    void OnBecameInvisible()
+    /*void OnBecameInvisible()
     {
         Destroy(gameObject);
-    }
+    }*/
 }
