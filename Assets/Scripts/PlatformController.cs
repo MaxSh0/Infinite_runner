@@ -11,14 +11,13 @@ public class PlatformController : MonoBehaviour
         {
             if (Platforms[i] == null)
             {
-                Debug.Log("Object is invisible");
                 if (i != 0)
                 {
-                    Platforms[i] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, Platforms[i-1].transform.position.z + 9.9f), Quaternion.identity);
+                    Platforms[i] = Instantiate(prefabPlatforms[Random.Range(0, 6)], new Vector3(0, 0, Platforms[i-1].transform.position.z + 9.9f), Quaternion.identity);
                 }
                 else
                 {
-                    Platforms[i] = Instantiate(prefabPlatforms[Random.Range(0, 5)], new Vector3(0, 0, Platforms[4].transform.position.z + 9.9f), Quaternion.identity);
+                    Platforms[i] = Instantiate(prefabPlatforms[Random.Range(0, 6)], new Vector3(0, 0, Platforms[4].transform.position.z + 9.9f), Quaternion.identity);
                 }
             }
         }
