@@ -11,6 +11,9 @@ public class MoveHero : MonoBehaviour
     public float forceJump = 20f;
     public Text MoneyText;
     private bool wannaJump = false;
+    public AudioSource MoneySource;
+    public AudioSource StepSource;
+    public AudioSource HitSource;
 
     private int Money = 0;
     void Start()
@@ -34,7 +37,6 @@ public class MoveHero : MonoBehaviour
             {
                 rb.AddForce(new Vector3(0, forceJump, 0), ForceMode.Impulse);
                 wannaJump = false;
-                Debug.Log("прыжок");
             }
 
             //бег в стороны
@@ -102,6 +104,7 @@ public class MoveHero : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle")) 
         {
+            HitSource.Play();
             GM.Play = false;
             animator.SetBool("Death", true);
         }
@@ -111,13 +114,19 @@ public class MoveHero : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Money")) 
         {
+            StepSource.pitch = Random.Range(0.9f, 1.1f);
+            MoneySource.PlayOneShot(MoneySource.clip);
             Destroy(other.gameObject);
             Money++;
             MoneyText.text = Money.ToString();
         }
     }
 
-
+    public void PlayFootStep() 
+    {
+        StepSource.pitch = Random.Range(0.9f, 1.1f);
+        StepSource.Play();
+    }
 
 
 }
